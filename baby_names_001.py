@@ -38,6 +38,8 @@ def main():
     writeFile.write(key +  '   ' + myDict[key] + '\n')
 
   writeFile.close()
+  f.close()
+  g.close()
 
 
 
