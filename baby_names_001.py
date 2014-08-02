@@ -4,7 +4,7 @@ import re
 def main():
 
   '''
-  this script attempts to follow the lesson for google python "baby names" sorting by alphabetical
+  this script attempts to follow the lesson for google python "baby names" --sorting by alphabetical
   order, and writing out a list of boy/girl names with corresponding popularity ranking
   '''
 
