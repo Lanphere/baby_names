@@ -15,17 +15,15 @@ def main():
 
   # year match
   for lineDate in f.readlines():
-    strYear = ''.join(lineDate)
-    matchYear = re.search(r'h3.*(\d\d\d\d)', strYear)
+    matchYear = re.search(r'h3.*(\d\d\d\d)', lineDate)
 
     if matchYear:
       writeFile.write(matchYear.group(1)+'\n\n')
 
   # names match
-  g = open('baby1990.html', 'r')
-  for lineNames in g.readlines():
-    strNames = ''.join(lineNames)
-    matchStr = re.search(r'<td>(\d*)</td><td>(\w*)</td><td>(\w*)</td>', strNames)
+  f.seek(0)
+  for lineNames in f.readlines():
+    matchStr = re.search(r'<td>(\d*)</td><td>(\w*)</td><td>(\w*)</td>', lineNames)
 
     # group 1 is rank, 2 is boy's name, 3 is girl's name
     if matchStr and not matchStr.group(2) in myDict:
@@ -39,7 +37,7 @@ def main():
 
   writeFile.close()
   f.close()
-  g.close()
+
 
 
 
